@@ -7,7 +7,7 @@ document.addEventListener("keypress", (e) => {
             tableau = tableau + "s";
         }
         else {
-            console.log("t une vrai merde vraiment");
+            console.log("Faux");
         }
     }
     if (e.key == "i") {
@@ -15,7 +15,7 @@ document.addEventListener("keypress", (e) => {
             tableau = tableau + "i";
         }
         else {
-            console.log("t'es une grosse merde c'est tous ce que je voulais dire");
+            console.log("Faux");
         }
     }
     if (e.key == "r") {
