@@ -1,0 +1,616 @@
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>See Manga!</title>
+	<link rel="icon" type="image/png" href="logo.png">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+	
+<div id="index">
+	<center>
+	<ul>
+		<li>
+			<a href="avis.html"> Avis </a>
+		</li>
+		<li>
+			<a href="nouveaute.html"> Nouveaute </a>
+		</li>
+		<li>
+			<a href="seemanga.html"> Anime </a>
+		</li>
+		<li class="index">
+			<a href="propos.html"> A propos </a>
+		</li>
+	</ul>
+	<br>
+	</center>
+</div>
+<br><br><br><br><br><br>
+<div id="catalog">
+	<h1>Choisi ton anime</h1>
+<div class="container">
+		<input type="text" class="input" id="search" placeholder="Recherchez..." name="" onchange="ouvrirPage()">
+		<div id="suggestions"></div>
+	</div>	
+
+	<script type="text/javascript">
+
+const persons = [
+	{name:'86'},
+	{name:'Another'},
+	{name:'Ao Haru Ride'},
+	{name:'A silent voice'},
+	{name:'Attaque des Titans'},
+	{name:'Banana Fish'},
+	{name:'Berserk'},
+	{name:'Black Bullet'},
+	{name:'Black Clover'},
+	{name:'Blue Period'},
+	{name:'Boruto'},
+	{name:'BPS'},
+	{name:'Bungou Stray Dogs'},
+	{name:'Charlotte'},
+	{name:'Classroom of the Elite'},
+	{name:'Code Geass'},
+	{name:'Darling in the Franxx'},
+	{name:'Death Note'},
+	{name:'Death Parad'},
+	{name:'Demon Slayer'},
+	{name:'Dororo'},
+	{name:'Dragon Ball'},
+	{name:'Dr.Stone'},
+	{name:'Given'},
+	{name:'GTO'},
+	{name:'Haikyu'},
+	{name:'Inazuma Eleven'},
+	{name:'Je veux manger ton pancreas'},
+	{name:'Jujutsu Kaisen'},
+	{name:'Kaguya sama: love is hard'},
+	{name:'Kimetsu no Yaiba'},
+	{name:'Kimi no naha'},
+	{name:'Kingdom'},
+	{name:'Komi'},
+	{name:'Lady Oscar'},
+	{name:'Le conte de la princesse Kaguya'},
+	{name:'Le voyage de Chihiro'},
+	{name:'Les chevaliers du Zodiaque'},
+	{name:'Les Memoires de Vanitas'},
+	{name:'Mirai Nikki'},
+	{name:'Moriarty'},
+	{name:'Monster'},
+	{name:'Nana'},
+	{name:'No game no life'},
+	{name:'Noragami'},
+	{name:'One Piece'},
+	{name:'Orient'},
+	{name:'Ousama Ranking'},
+	{name:'Paradise Kiss'},
+	{name:'Parasyte'},
+	{name:'Perfect Blue'},
+	{name:'Platinum end'},
+	{name:'Ping Pong'},
+	{name:'Red Garden'},
+	{name:'Sailor Moon'},
+	{name:'Saint Seiya'},
+	{name:'Sakamichi no Appolon'},
+	{name:'Sakamoto'},
+	{name:'Shiki'},
+	{name:'Shingeki no Kyojin'},
+	{name:'shouwa genroku rakugo shinjuu'},
+	{name:'Skate the Infinity'},
+	{name:'Steins Gate'},
+	{name:'Tamako market'},
+	{name:'Tokyo Revengers'},
+	{name:'Toradora'},
+	{name:'To your eternity'},
+	{name:'Uninhabited Planet Survive'},
+	{name:'Vanitas no Carte'},
+	{name:'Vinland Saga'},
+	{name:'Wonder egg Priority'},
+	{name:'Wotaku'},
+	{name:'Wotaku: Love is hard for an Otaku'},
+	{name:'Your lie in April'},
+	{name:'Your name'},
+	{name:'Yuri on the Ice'},
+	{name:'Classroom of the Elite'},
+];
+
+const searchinput = document.getElementById('search');
+
+searchinput.addEventListener('keyup', function() {
+	const input = searchinput.value;
+
+	const result = persons.filter(item => item.name.toLocaleLowerCase().includes(input.toLocaleLowerCase()));
+
+	let suggestion = '';
+
+	if (input !='') {
+	result.forEach(resultItem =>
+		suggestion += `
+			<div class="suggestion">${resultItem.name}</div>
+		`
+		)
+	}
+	if (input == 'Shingeki no Kyojin') {
+				window.open("file:///E:/see_manga/snklog.html");
+				window.location('file:///E:/see_manga/snklog.html');
+	}
+	if (input == 'Attaque des Titans') {
+				window.open("file:///E:/see_manga/snklog.html");
+	}
+	if (input == 'Kimetsu no Yaiba') {
+				window.open("file:///E:/see_manga/dslog.html");
+	}
+	if (input == 'Demon Slayer') {
+				window.open("file:///E:/see_manga/dslog.html");
+	}
+	if (input == 'Death Note') {
+				window.open("file:///E:/see_manga/dnlog.html");
+	}
+	if (input == 'Boruto') {
+				window.open("file:///E:/see_manga/borutolog.html");
+	}
+	if (input == 'Jujutsu Kaisen') {
+				window.open("file:///E:/see_manga/jutsulog.html");
+	}
+	if (input == 'Jujutsu Kaisen') {
+				window.open("file:///E:/see_manga/jutsulog.html");
+	}
+	if (input == 'A silent voice') {
+				window.open("file:///E:/see_manga/sv.html");
+	}
+	if (input == 'A silent voice') {
+				window.open("file:///E:/see_manga/inazumalog.html");
+	}
+	if (input == 'One Piece') {
+				window.open("file:///E:/see_manga/oplog.html");
+	}
+	if (input == 'Vinland Saga') {
+				window.open("file:///E:/see_manga/vinlandlog.html");
+	}
+	if (input == 'Dragon Ball') {
+				window.open("file:///E:/see_manga/dblog.html");
+	}
+	if (input == 'Dr.Stone') {
+				window.open("file:///E:/see_manga/docstonelog.html");
+	}
+	if (input == 'Haikyu') {
+				window.open("file:///E:/see_manga/haikyulog.html");
+	}
+	if (input == 'Les chevaliers du Zodiaque') {
+				window.open("file:///E:/see_manga/sslog.html");
+	}
+	if (input == 'Saint Seiya') {
+				window.open("file:///E:/see_manga/sslog.html");
+	}
+	if (input == 'Sailor Moon') {
+				window.open("file:///E:/see_manga/moonlog.html");
+	}
+	if (input == 'Uninhabited Planet Survive') {
+				window.open("file:///E:/see_manga/upslog.html");
+	}
+	if (input == 'Tokyo Revengers') {
+				window.open("file:///E:/see_manga/trlog.html");
+	}
+	if (input == 'Lady Oscar') {
+				window.open("file:///E:/see_manga/ladylang.html");
+	}
+	if (input == 'Banana Fish') {
+				window.open("file:///E:/see_manga/bananalog.html");
+	}
+	if (input == 'Mirai Nikki') {
+				window.open("file:///E:/see_manga/mirailog.html");
+	}
+	if (input == 'Darling in the Franxx') {
+				window.open("file:///E:/see_manga/franxxlog.html");
+	}
+	if (input == 'Dororo') {
+				window.open("file:///E:/see_manga/dororolog.html");
+	}
+	if (input == 'Berserk') {
+				window.open("file:///E:/see_manga/berserklog.html");
+	}
+	if (input == 'Charlotte') {
+				window.open("file:///E:/see_manga/charlottelog.html");
+	}
+	if (input == 'Je veux manger ton pancreas') {
+				window.open("file:///E:/see_manga/pancreas.html");
+	}
+	if (input == 'Platinum end') {
+				window.open("file:///E:/see_manga/platiniumlog.html");
+	}
+	if (input == 'Kaguya sama: love is hard') {
+				window.open("file:///E:/see_manga/kaguyalog.html");
+	}
+	if (input == 'Kaguya sama') {
+				window.open("file:///E:/see_manga/kaguyalog.html");
+	}
+	if (input == 'Noragami') {
+				window.open("file:///E:/see_manga/noragamilog.html");
+	}
+	if (input == 'Blue Period') {
+				window.open("file:///E:/see_manga/periodlog.html");
+	}
+	if (input == 'Black Clover') {
+				window.open("file:///E:/see_manga/cloverlog.html");
+	}
+	if (input == 'Nana') {
+				window.open("file:///E:/see_manga/nanalog.html");
+	}
+	if (input == '86') {
+				window.open("file:///E:/see_manga/86log.html");
+	}
+	if (input == 'Les Memoires de Vanitas') {
+				window.open("file:///E:/see_manga/vnclog.html");
+	}
+	if (input == 'Vanitas no Carte') {
+				window.open("file:///E:/see_manga/vnclog.html");
+	}
+	if (input == 'Wonder egg Priority') {
+				window.open("file:///E:/see_manga/egglog.html");
+	}
+	if (input == 'shouwa genroku rakugo shinjuu') {
+				window.open("file:///E:/see_manga/shouwalog.html");
+	}
+	if (input == 'Shouwa') {
+				window.open("file:///E:/see_manga/shouwalog.html");
+	}
+	if (input == 'Toradora') {
+				window.open("file:///E:/see_manga/toralog.html");
+	}
+	if (input == 'Given') {
+				window.open("file:///E:/see_manga/givenlog.html");
+	}
+	if (input == 'Death Parad') {
+				window.open("file:///E:/see_manga/dplog.html");
+	}
+	if (input == 'Orient') {
+				window.open("file:///E:/see_manga/orientlog.html");
+	}
+	if (input == 'Komi cherche ses mots') {
+				window.open("file:///E:/see_manga/komilog.html");
+	}
+	if (input == 'Komi') {
+				window.open("file:///E:/see_manga/komilog.html");
+	}
+	if (input == 'Ousama Ranking') {
+				window.open("file:///E:/see_manga/ranlog.html");
+	}
+	if (input == 'Black Bullet') {
+				window.open("file:///E:/see_manga/bulletlog.html");
+	}
+	if (input == 'To your eternity') {
+				window.open("file:///E:/see_manga/eternitylog.html");
+	}
+	if (input == 'Code Geass') {
+				window.open("file:///E:/see_manga/codelog.html");
+	}
+	if (input == 'Le voyage de Chihiro') {
+				window.open("file:///E:/see_manga/chi.html");
+	}
+	if (input == 'Shiki') {
+				window.open("file:///E:/see_manga/shikilog.html");
+	}
+	if (input == 'Tamako market') {
+				window.open("file:///E:/see_manga/tamakolog.html");
+	}
+	if (input == 'Yuri on the Ice') {
+				window.open("file:///E:/see_manga/yurilog.html");
+	}
+	if (input == 'Kimi no naha') {
+				window.open("file:///E:/see_manga/name.html");
+	}
+	if (input == 'Your name') {
+				window.open("file:///E:/see_manga/name.html");
+	}
+	if (input == 'Le conte de la princesse Kaguya') {
+				window.open("file:///E:/see_manga/conte.html");
+	}
+	if (input == 'GTO') {
+				window.open("file:///E:/see_manga/gtolog.html");
+	}
+	if (input == 'Kingdom') {
+				window.open("file:///E:/see_manga/kinglog.html");
+	}
+	if (input == 'No game no life') {
+				window.open("file:///E:/see_manga/gamelog.html");
+	}
+	if (input == 'Bungou Stray Dogs') {
+				window.open("file:///E:/see_manga/bungolog.html");
+	}
+	if (input == 'Wotaku: Love is hard for an Otaku') {
+				window.open("file:///E:/see_manga/otakulog.html");
+	}
+	if (input == 'Wotaku') {
+				window.open("file:///E:/see_manga/otakulog.html");
+	}
+	if (input == 'Paradise Kiss') {
+				window.open("file:///E:/see_manga/paradiselog.html");
+	}
+	if (input == 'Parasyte') {
+				window.open("file:///E:/see_manga/paralog.html");
+	}
+	if (input == 'Your lie in April') {
+				window.open("file:///E:/see_manga/lielog.html");
+	}
+	if (input == 'Moriarty') {
+				window.open("file:///E:/see_manga/morilog.html");
+	}
+	if (input == 'Monster') {
+				window.open("file:///E:/see_manga/monlog.html");
+	}
+	if (input == 'Red Garden') {
+				window.open("file:///E:/see_manga/redlog.html");
+	}
+	if (input == 'Sakamoto') {
+				window.open("file:///E:/see_manga/sakalog.html");
+	}
+	if (input == 'Sakamichi no Appolon') {
+				window.open("file:///E:/see_manga/michilog.html");
+	}
+	if (input == 'Ao Haru Ride') {
+				window.open("file:///E:/see_manga/ridelog.html");
+	}
+	if (input == 'Skate the Infinity') {
+				window.open("file:///E:/see_manga/skatelog.html");
+	}
+	if (input == 'Steins Gate') {
+				window.open("file:///E:/see_manga/steinslog.html");
+	}
+	if (input == 'Another') {
+				window.open("file:///E:/see_manga/anotherlog.html");
+	}
+	if (input == 'Ping Pong') {
+				window.open("file:///E:/see_manga/pinglog.html");
+	}
+	if (input == 'Perfect Blue') {
+				window.open("file:///E:/see_manga/perfect.html");
+	}
+	if (input == 'Classroom of the Elite') {
+				window.open("file:///E:/see_manga/elitelog.html");
+	}
+	if (input == 'BPS') {
+				window.open("file:///E:/see_manga/bpslog.html");
+	}
+document.getElementById('suggestions').innerHTML = suggestion;
+})
+	</script>
+<br>
+	<a href="snklog.html" title="Shingeki No Kyojin" id="snk">
+					<img src="https://www.ecranlarge.com/media/cache/1600x1200/uploads/image/001/173/lattaque-des-titans-shingeki-no-kyojin-photo-1173448.jpg">
+				</a>
+				<a href="dslog.html" title="Demont Slayer">
+					<img src="https://www.cnet.com/a/img/resize/94f246061e4f6c49d00e1285dfbda9262145eaf7/hub/2021/05/03/bd37964d-fe5c-4574-9df3-1986e0bf5050/demon-slayer-mugen-train-1239731.jpg?auto=webp&fit=crop&height=675&width=1200" alt="Demont Slayer">
+				</a>
+				<a href="dnlog.html" title="Death Note">
+					<img src="https://static.fnac-static.com/multimedia/Images/FD/Comete/147352/CCP_IMG_ORIGINAL/1942735.jpg" alt="Death Note">
+				</a>
+				<a href="borutolog.html" title="Boruto">
+					<img src="https://i.ytimg.com/vi/EEFd_uOPGM4/maxresdefault.jpg" alt="Boruto">
+				</a>
+				<a href="jutsulog.html" title="Jujutsu Kaisen">
+					<img src="https://cdn.sortiraparis.com/images/80/98390/880369-jujutsu-kaisen-le-manga-se-decline-en-escape-game-gratuit-en-mai.jpg" alt="Jujutsu">
+				</a>
+				<a href="sv.html" title="A Silent Voice">
+					<img src="https://www.forumdesimages.fr/media/cache/fdi_big_overview/media/fdi/36398-a-silent-voice-_2_.jpg" alt="Silent Voice">
+				</a>
+				<a href="inazumalog.html" title="Inazuma Eleven">
+					<img src="https://fs-prod-cdn.nintendo-europe.com/media/images/10_share_images/portals_3/H2x1_CharacterHub_InazumaEleven.jpg" alt="Inazuma">
+				</a>
+				<a href="oplog.html" title="One Piece">
+					<img src="https://images.lanouvellerepublique.fr/image/upload/t_1020w/645514552c14e1f2158b45f8.jpg" alt="One Piece">
+				</a>
+				<a href="vinlandlog.html" title="Vinland Saga">
+					<img src="https://constantin-blog.eu/wp-content/uploads/2020/05/vinland-saga.jpg" alt="Vinland">
+				</a>
+				<a href="dblog.html" title="Dragon Ball" alt="Dragon Ball">
+					<img src="https://media.ouest-france.fr/v1/pictures/MjAyMTAxY2Q4MGM2ZjFhN2IyMjNmM2RiZDNlY2VkMGM1YTc0MjU?width=1260&height=708&focuspoint=52%2C41&cropresize=1&client_id=bpeditorial&sign=fb2514333da33140d35fba033fc74d85547abc7d81d5d2b2ecdfde24e6f57dfb" alt="Dragon Ball">
+				</a>
+				<a href="docstonelog.html" title="Docteur Stone" alt="Dragon Ball Z">
+					<img src="https://s.yimg.com/ny/api/res/1.2/MBgzVRU2CiokF2nqukbB0w--/YXBwaWQ9aGlnaGxhbmRlcjt3PTY0MDtoPTM3Ng--/https://media.zenfs.com/fr/purebreak_news_fr_110/7855792ff0849aa3b03219815931c6e9" alt="Docteur Stone">
+				</a>
+				<a href="haikyulog.html" title="Haikyu" alt="Haikyu">
+					<img src="https://www.ecranlarge.com/media/cache/1600x1200/uploads/image/001/158/haikyu-haikyu-1158993.png" alt="Haikyu">
+				</a>
+				<a href="sslog.html" title="Saint Seiya" alt="Saint Seiya">
+					<img src="https://www.crunchyroll.com/imgsrv/display/thumbnail/640x360/catalog/crunchyroll/14af0ad4612d951a11c244ebdebb10b8.jpe" alt="Saint Seiya">
+				</a>
+				<a href="moonlog.html" title="Sailor Moon" alt="Sailor">
+					<img src="https://occ-0-2794-2219.1.nflxso.net/dnm/api/v6/E8vDc_W8CLv7-yMQu8KMEC7Rrr8/AAAABSUHQjtB9uGedpxjy11L62pj6uIbjOy6-lq9KsBP-zOlrBzieH9mAiVp2-kWWczT04wFCwC4zv4c5M6ZPq187vhXSxDYuDQKbU7s.jpg?r=2cf" alt="Sailor Moon">
+				</a>
+				<a href="upslog.html" title="Uninhabited Planet Survive!" alt="Uninhabited Planet Survive!">
+					<img src="data:image/jpeg;base64,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" alt="Uninhabited Planet Survive!">
+				</a>
+				<a href="trlog.html" title="Tokyo Revengers" alt="Tokyo Revengers">
+					<img src="https://i0.wp.com/www.coyotemag.fr/wp-content/uploads/2020/12/MINI-Tokyo-Revengers.jpg?resize=1000%2C600&ssl=1" alt="Tokyo Revengers">
+				</a>
+				<a href="ladylang.html" title="Lady Oscars" alt="Lady Oscar">
+					<img src="ladyaff.jpg" alt="Lady Oscar">
+				</a>
+				<a href="bananalog.html" title="Banana Fish" alt="Banana Fish">
+					<img src="bananaaff.jpg" alt="Banana Fish">
+				</a>
+				<a href="mirailog.html" title="Mirai Nikki">
+					<img src="miraiaff.jpg" alt="Mirai Nikki">
+				</a>
+				<a href="franxxlog.html" title="Darling in the Franxx">
+					<img src="franxaff.jpg" alt="Darling in the Franxx">
+				</a>
+				<a href="dororolog.html" title="Dororo">
+					<img src="dororoaff.jpg" alt="Dororo">
+				</a>
+				<a href="berserklog.html" title="Berserk">
+					<img src="berserkaff.webp" alt="Berserk">
+				</a>
+				<a href="charlottelog.html" title="Charlotte">
+					<img src="charlotteaff.jpg" alt="Charlotte">
+				</a>
+				<a href="pancreas.html" title="Je veux manger ton pancréas">
+					<img src="pancreasaff.jpg" alt="Je veux manger ton pancréas">
+				</a>
+				<a href="platiniumlog.html" title="Platinium End">
+					<img src="platiniumaff.jpg" alt="Platinium">
+				</a>
+				<a href="kaguyalog.html" title="Kagura-Sama: Love is war">
+					<img src="kaguyaaff.png" alt="Kagura-Sama: Love is war">
+				</a>
+				<a href="noragamilog.html" title="Noragami">
+					<img src="noragamiaff.png" alt="Noragami">
+				</a>
+				<a href="periodlog.html" title="Blue Period">
+					<img src="periodaff.jpg" alt="Blue Period">
+				</a>
+				<a href="cloverlog.html" title="Black Clover">
+					<img src="cloveraff.jpg" alt="Black Clover">
+				</a>
+				<a href="nanalog.html" title="Nana"> 
+					<img src="nanaaff.jpg" alt="Nana">
+				</a>
+				<a href="86log.html" title="86: EIghty Six">
+					<img src="86aff.jpg" alt="86: EIghty Six">
+				</a>
+				<a href="vnclog.html" title="Vanitas no Carte">
+					<img src="vncaff.jpg" alt="Vanitas no Carte">
+				</a>
+				<a href="egglog.html" title="Wonder egg Priority">
+					<img src="wepaff.jpg" alt="Wonder egg Priority">
+				</a>
+				<a href="shouwalog.html" title="Shouwa Genroku Rakugo Shinjuu">
+					<img src="shouwaaff.jpg">
+				</a>
+				<a href="toralog.html" title="Toradora">
+					<img src="toraaff.jpg">
+				</a>
+				<a href="givenlog.html" title="Given">
+					<img src="givenaff.jpg">
+				</a>
+				<a href="dplog.html" title="Death Parade">
+					<img src="dpaff.jpg">
+				</a>
+				<a href="orientlog.html" title="Orient">
+					<img src="orientaff.jpg">
+				</a>
+				<a href="komilog.html" title="Komi cherche ses mots">
+					<img src="komiaff.png">
+				</a>
+				<a href="ranlog.html" title="Ousama Ranking">
+					<img src="usamaaff.jpg">
+				</a>
+				<a href="bulletlog.html" title="Black Bullet">
+					<img src="bulletaff.jpg">
+				</a>
+				<a href="eternitylog.html" title="To your Eternity">
+					<img src="eternityaff.jpg">
+				</a>
+				<a href="codelog.html" title="Code Geass">
+					<img src="codeaff.jpg">
+				</a>
+				<a href="chi.html" title="Le voyage de Chihiro">
+					<img src="chiaff.jpg">
+				</a>
+				<a href="shikilog.html" title="Shiki">
+					<img src="shikiaff.jpg">
+				</a>
+				<a href="tamakolog.html" title="Tamako Market">
+					<img src="tamakoaff.jpg">
+				</a>
+				<a href="yurilog.html" title="Yuri on Ice">
+					<img src="yuriaff.png">
+				</a>
+				<a href="name.html" title="Your name">
+					<img src="nameaff.png">
+				</a>
+				<a href="conte.html" title="Le conte de la princesse Kaguya">
+					<img src="conteaff.jpg">
+				</a>
+				<a href="gtolog.html" title="Great Teacher Onizuka">
+					<img src="gtoaff.png">
+				</a>
+				<a href="kinglog.html" title="Kingdom">
+					<img src="kingaff.jpg">
+				</a>
+				<a href="gamelog.html" title="No game No life">
+					<img src="gameaff.jpg">
+				</a>
+				<a href="bungolog.html" title="Bungo Stray Dogs">
+					<img src="bungoaff.png">
+				</a>
+				<a href="otakulog.html" title="Wotakoi: Love is hard for an Otaku">
+					<img src="otakuaff.png">
+				</a>
+				<a href="paradiselog.html" title="Paradise Kiss">
+					<img src="paradiseaff.jpg">
+				</a>
+				<a href="paralog.html" title="Parasyte">
+					<img src="paraaff.jpg">
+				</a>
+				<a href="lielog.html" title="Your lie in April">
+					<img src="lieaff.jpg">
+				</a>
+				<a href="morilog.html" title="Moriarty">
+					<img src="moriaff.jpg">
+				</a>
+				<a href="monlog.html" title="Monster">
+					<img src="monaff.jpg">
+				</a>
+				<a href="redlog.html" title="Red Garden">
+					<img src="redaff.jpg">
+				</a>
+				<a href="sakalog.html" title="Sakamoto">
+					<img src="sakaaff.jpg">
+				</a>
+				<a href="michilog.html" title="Sakamichi no Appolon">
+					<img src="michiaff.jpg">
+				</a>
+				<a href="ridelog.html" title="Ao Haru Ride">
+					<img src="rideaff.jpg">
+				</a>
+				<a href="skatelog.html" title="SK∞the Infinity">
+					<img src="skateaff.jpg">
+				</a>
+				<a href="steinslog.html" title="Steins Gate">
+					<img src="steinsaff.jpg">
+				</a>
+				<a href="anotherlog.html" title="Another">
+					<img src="anotheraff.jpg">
+				</a>
+				<a href="pinglog.html" title="Ping Pong">
+					<img src="pingaff.jpg">
+				</a>
+				<a href="perfect.html" title="Perfect Blue">
+					<img src="perfectaff.jpg">
+				</a>
+				<a href="elitelog.html" title="Classroom of the Elite">
+					<img src="eliteaff.jpg">
+				</a>
+				<a href="bpslog.html" title="Battle Programmer Shirase">
+					<img src="bpsaff.jpg">
+				</a>
+				<a href="toiletlog.html" title="Toilet-Bound Hanako-Kun">
+					<img src="toiletaff.jpg">
+				</a>
+				<a href="moblog.html" title="Mob Psycho 100">
+					<img src="mobaff.jpg">
+				</a>
+				<a href="seraphlog.html" title="Seraph of the End">
+					<img src="seraphaff.jpg">
+				</a>
+				<a href="cowlog.html" title="Cowboy Bebop">
+					<img src="cowaff.jpg">
+				</a>
+				<a href="champlog.html" title="Cowboy Bebop">
+					<img src="champaff.jpg">
+				</a>
+				<a href="neonlog.html" title="Neon Genesis Evangelion">
+					<img src="neonaff.jpg">
+				</a>
+				<a href="starlog.html" title="Beastar">
+					<img src="staraff.jpg">
+				</a>
+				<a href="spylog.html" title="Beastar">
+					<img src="spyaff.jpg">
+				</a>
+</div>
+</body>
+</html> 
